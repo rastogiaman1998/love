@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You, My Love ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Password Screen -->
+  <div id="password-screen" class="password-screen">
+    <div class="password-bg-hearts"></div>
+    <div class="password-container glass">
+      <div class="password-heart">❤️</div>
+      <h1 class="password-title">A Secret Just For You</h1>
+      <p class="password-subtitle">Enter the magic word to begin our story</p>
+      <div class="password-input-wrapper">
+        <input
+          type="password"
+          id="password-input"
+          class="password-input"
+          placeholder="Enter password..."
+          autocomplete="off"
+        >
+        <button id="password-submit" class="password-btn" aria-label="Unlock">
+          <span>Unlock</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+      <p id="password-error" class="password-error" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Main Website -->
+  <div id="main-site" class="main-site hidden">
+
+    <!-- Background Effects -->
+    <div id="hearts-container" class="hearts-container" aria-hidden="true"></div>
+    <div id="particles-container" class="particles-container" aria-hidden="true"></div>
+
+    <!-- Floating Music Player -->
+  <div id="music-player" class="music-player glass">
+    <button id="music-toggle" class="music-btn" aria-label="Play/Pause music">
+      <svg id="play-icon" class="music-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg id="pause-icon" class="music-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+    <div class="music-info">
+      <span class="music-label">Our Song</span>
+      <div class="music-wave">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <audio id="audio" src="music/song.mp3" preload="auto" loop></audio>
+  </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="hero-content">
+        <h1 class="hero-title animate-on-load">
+          <span class="title-line">Every Moment With You</span>
+          <span class="title-line accent">Is My Favorite Story</span>
+          <span class="title-heart">❤️</span>
+        </h1>
+        <p class="hero-subtitle animate-on-load delay-1">A love story written in every heartbeat</p>
+        <a href="#timeline" class="hero-btn animate-on-load delay-2">
+          <span>Begin Our Journey</span>
+          <div class="btn-glow"></div>
+        </a>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- Love Story Timeline -->
+    <section id="timeline" class="timeline section">
+      <div class="container">
+        <h2 class="section-title reveal">Our Love Story</h2>
+        <p class="section-subtitle reveal">Every chapter, more beautiful than the last</p>
+        <div class="timeline-track">
+          <div class="timeline-line"></div>
+          <div id="timeline-cards" class="timeline-cards"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="gallery section">
+      <div class="container">
+        <h2 class="section-title reveal">Our Memories</h2>
+        <p class="section-subtitle reveal">Captured moments of us</p>
+        <div id="gallery-grid" class="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#10094;</button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Memory photo">
+      </div>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">&#10095;</button>
+      <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+
+    <!-- Love Notes -->
+    <section id="love-notes" class="love-notes section">
+      <div class="container">
+        <h2 class="section-title reveal">Love Notes</h2>
+        <p class="section-subtitle reveal">Little whispers from my heart</p>
+        <div id="notes-grid" class="notes-grid"></div>
+      </div>
+    </section>
+
+    <!-- Typewriter Letter -->
+    <section id="letter" class="letter section">
+      <div class="container">
+        <div class="letter-wrapper glass reveal">
+          <div class="letter-seal">💌</div>
+          <h2 class="letter-heading">A Letter For You</h2>
+          <div class="letter-paper">
+            <pre id="typewriter-text" class="typewriter-text"></pre>
+            <span id="typewriter-cursor" class="typewriter-cursor">|</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memory Counter -->
+    <section id="counters" class="counters section">
+      <div class="container">
+        <h2 class="section-title reveal">Our Journey In Numbers</h2>
+        <div id="counter-grid" class="counter-grid"></div>
+      </div>
+    </section>
+
+    <!-- Reasons I Love You -->
+    <section id="reasons" class="reasons section">
+      <div class="container">
+        <h2 class="section-title reveal">Reasons I Love You</h2>
+        <p class="section-subtitle reveal">Ten reasons, but there are infinitely more</p>
+        <div id="reasons-grid" class="reasons-grid"></div>
+      </div>
+    </section>
+
+    <!-- Surprise Button -->
+    <section id="surprise" class="surprise section">
+      <div class="container reveal">
+        <button id="surprise-btn" class="surprise-btn">
+          <span class="surprise-btn-text">Click for a Surprise</span>
+          <div class="surprise-btn-glow"></div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Surprise Overlay -->
+    <div id="surprise-overlay" class="surprise-overlay hidden">
+      <div id="confetti-container" class="confetti-container"></div>
+      <div id="explosion-hearts" class="explosion-hearts"></div>
+      <h2 class="surprise-message">I Love You Forever ❤️</h2>
+    </div>
+
+    <!-- Final Ending -->
+    <section id="ending" class="ending section">
+      <div class="ending-content">
+        <div class="ending-hearts" aria-hidden="true">
+          <span class="ending-heart">❤️</span>
+          <span class="ending-heart">❤️</span>
+          <span class="ending-heart">❤️</span>
+        </div>
+        <h2 class="ending-title reveal">
+          <span class="ending-line">I'll Love You Today,</span>
+          <span class="ending-line">Tomorrow,</span>
+          <span class="ending-line accent">Forever.</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Made with ❤️ just for you.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
