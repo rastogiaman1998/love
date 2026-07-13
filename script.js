@@ -72,7 +72,8 @@ const GALLERY_PHOTOS = [
   "images/IMG_3238.JPG",
   "images/IMG_3247.JPG",
   "images/IMG_3217.JPG",
-  "images/IMG_3220.JPG"
+  "images/IMG_3220.JPG",
+  "images/my.jpeg"
 ];
 
 // Days between two dates (inclusive — start day counts as day 1)
